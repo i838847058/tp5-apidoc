@@ -6,15 +6,14 @@
 {/block}
 {block name="main"}
 <div class="container">
-    <div class="jumbotron">
-        <p class="bg-success" style="font-size: 18px;">文档地址：{$root}/doc?name={$doc['name']}</p>
-        <h2>接口：{$doc.title|default="请设置title注释"}</h2>
-        <p>接口地址：{$doc.url|default="请设置url注释"} <span class="label label-success">{$doc.method|default='GET'}</span></p>
-        <p class="text-primary">{$doc.title|default="请设置title注释"} -- {$doc.author|default="请设置auhtor注释"}</p>
+    <div class="jumbotron" style="margin:30px 0;background-color: #fff;">
+        <h2>接口：{$doc.title|default="请设置@title注释"}</h2>
+        <p>接口地址：{$doc.url|default="请设置@url注释"} <span class="label label-success">{$doc.method|default='GET'}</span></p>
+        <p class="text-primary">by {$doc.author|default="请设置@auhtor注释"}</p>
         <br/>
         <p><strong>{$doc.description|default=""}</strong></p><br/>
 
-        <ul id="myTab" class="nav nav-tabs">
+        <ul id="myTab" class="nav nav-tabs" style="padding-top: 5px;">
             <li class="active"><a href="#info" data-toggle="tab">接口信息</a></li>
             <li><a href="#test" data-toggle="tab">在线测试</a></li>
         </ul>
@@ -82,15 +81,15 @@
                                 <div class="col-sm-4"><button type="button" id="send" class="btn btn-success" data-loading-text="Loading..." autocomplete="off">发送测试</button></div>
                             </div>
                             {if condition="isset($doc.header) && !empty($doc.header)"}
-                                {volist name="doc.header" id="head"}
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label"><span class="badge">header</span> {$head.name|default=""}</label>
-                                    <div class="col-sm-6">
-                                        <input class="form-control" type="text" name="header[{$head.name}]" value="">
-                                    </div>
-                                    <div class="col-sm-4"><label class="control-label text-warning"></label></div>
+                            {volist name="doc.header" id="head"}
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"><span class="badge">header</span> {$head.name|default=""}</label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" name="header[{$head.name}]" value="">
                                 </div>
-                                {/volist}
+                                <div class="col-sm-4"><label class="control-label text-warning"></label></div>
+                            </div>
+                            {/volist}
                             {/if}
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">提交方式</label>
@@ -140,7 +139,7 @@
                     </div>
                     <div class="panel-body" id="span_result">
                         <div class="form-inline result_body">
-                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addJosnTextmModal">自定义解析数据</button>
+                            <!--                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addJosnTextmModal">自定义解析数据</button>-->
                             <label>缩进量:</label>
                             <select class="form-control" id="TabSize"  onchange="TabSizeChanged()">
                                 <option value="1">1</option>
@@ -180,7 +179,7 @@
         </div>
     </div>
 
-    <p>&copy; {$copyright} <p>
+    <p>&copy; Powered By xiaoYun.Studio <p>
 </div>
 <!-- 模态框（Modal） -->
 <div class="modal fade" id="addParamModal" tabindex="-1" role="dialog"
@@ -253,11 +252,11 @@
             var $btn = $(this).button('loading');
             $.ajax({
                 type: "POST",
-                url: "{$root}/doc/debug",
+                url: "{$doc.url}",
                 data: $("#apiform").serialize(),
                 dataType:'json',
                 success: function (data) {
-                    window.json = data.result;
+                    window.json = data;
                     Process();
                     $btn.button('reset');
                 },

@@ -1,6 +1,6 @@
 {
     "name": "xiaoyun/tp-apidoc",
-    "description": "The ThinkPHP5 Api Doc Package",
+    "description": "The ThinkPHP5 Api Doc Package.",
     "type": "think-extend",
     "authors": [
         {
