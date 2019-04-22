@@ -70,8 +70,6 @@ class DocController
             $this->view->init($config);
         }
         $this->view->assign('title',$this->doc->__get("title"));
-        $this->view->assign('version',$this->doc->__get("version"));
-        $this->view->assign('copyright',$this->doc->__get("copyright"));
         $this->assets_path = $this->doc->__get("static_path");
         $this->assets_path = $this->assets_path ? $this->assets_path : '/doc/assets';
         $this->view->assign('static', $this->assets_path);
