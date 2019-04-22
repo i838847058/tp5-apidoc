@@ -1,11 +1,11 @@
 {
-    "name": "weiwei/api-doc",
+    "name": "xiaoyun/tp-apidoc",
     "description": "The ThinkPHP5 Api Doc Package",
     "type": "think-extend",
     "authors": [
         {
-            "name": "weiwei",
-            "email": "1763692101@qq.com"
+            "name": "shuxiaoxian",
+            "email": "winnie_xian@163.com"
         }
     ],
     "license": "MIT",

@@ -1,9 +1,9 @@
-#api-doc
+##xiaoyun/tp-apidoc
 
 ### 使用方法
 ####1、安装扩展
 ```
-composer require weiwei/api-doc
+composer require xiaoyun/tp-apidoc
 ```
 
 ####2、配置参数
@@ -12,7 +12,8 @@ composer require weiwei/api-doc
 - 在controller参数中添加对应的类
 ```
     'controller' => [
-        'app\\api\\controller\\Demo' //这个是控制器的命名空间+控制器名称
+        //  需要生成文档的类 如 'app\index\controller\index'
+        'app\index\controller\index'
     ]
 ```
 ####3、在相关接口类中增加注释参数( group 参数将接口分组，可选)
@@ -85,17 +86,8 @@ class Demo extends Controller
 ```
 ####4、在浏览器访问http://你的域名/doc 或者 http://你的域名/index.php/doc 查看接口文档
 
-####5、预览
-- ![](https://static.oschina.net/uploads/img/201704/17101409_tAgD.png)
-- ![](https://static.oschina.net/uploads/img/201704/17101348_XuUz.png)
-- ![](https://static.oschina.net/uploads/img/201704/17101306_KePe.png)
-
 ###更多支持
-- QQ群663447446
-
-###赞助二维码
-- ![](https://static.oschina.net/uploads/space/2018/0601/163814_StfS_270003.jpg)
-- ![](https://static.oschina.net/uploads/space/2018/0601/163835_MOVe_270003.jpg)
+- xiaoyun.studio
 
 ###2017年8月16日更新
 - 增加头部参数设置，根据自己需求去设置参数
