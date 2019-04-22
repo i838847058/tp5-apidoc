@@ -8,12 +8,12 @@ body {
 }
 
 a {
-	color: #00A881;
+	color: #54ceff;
 	text-decoration: none;
 }
 
 a:HOVER {
-	color: #00A881;
+	color: #54ceff;
 	text-decoration: none;
 }
 
@@ -70,7 +70,7 @@ h6 {
 
 .zt_header {
 	height: 60px;
-	background-color: #00A881;
+	background-color: #54ceff;
 	color: #fff;
 	font-size: 30px;
 	line-height: 60px;
@@ -83,7 +83,7 @@ h6 {
 
 .zt_footer {
 	height: 60px;
-	border-top: 2px solid #00A881;
+	border-top: 2px solid #54ceff;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -97,7 +97,7 @@ h6 {
 	left: 0;
 	bottom: 0px;
 	top: 60px;
-	border-right: 2px solid #00A881;
+	border-right: 2px solid #54ceff;
 	overflow: auto;
 }
 
@@ -241,7 +241,7 @@ pre code{
 .am-list>li>a {
 	display: block;
 	padding: 1rem 0;
-	color: #00A881;
+	color: #54ceff;
 	text-decoration: none;
 	padding-left: 2em;
 }

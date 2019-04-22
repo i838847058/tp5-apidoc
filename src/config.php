@@ -1,6 +1,6 @@
 <?php
 return [
-    'title' => "APi接口文档",  //文档title
+    'title' => "API接口文档",  //文档title
     'password' => '', //访问密码，为空不需要密码
     //静态资源路径--默认为云上路径，解决很多人nginx配置问题
     //可将assets目录拷贝到public下面，具体路径课自行配置

@@ -7,13 +7,13 @@
 {block name="main"}
 <div class="container">
     <div class="jumbotron" style="margin:30px 0;background-color: #fff;">
-        <h2>接口：{$doc.title|default="请设置@title注释"}</h2>
+        <h2 style="font-weight: bold;">{$doc.title|default="请设置@title注释"}</h2>
         <p>接口地址：{$doc.url|default="请设置@url注释"} <span class="label label-success">{$doc.method|default='GET'}</span></p>
         <p class="text-primary">by {$doc.author|default="请设置@auhtor注释"}</p>
         <br/>
         <p><strong>{$doc.description|default=""}</strong></p><br/>
 
-        <ul id="myTab" class="nav nav-tabs" style="padding: 5px;">
+        <ul id="myTab" class="nav nav-tabs" style="padding: 5px 5px 0;">
             <li class="active"><a href="#info" data-toggle="tab">接口信息</a></li>
             <li><a href="#test" data-toggle="tab">在线测试</a></li>
         </ul>
@@ -67,8 +67,8 @@
             <div class="tab-pane fade in" id="test">
                 <br>
                 <!--head-->
-                <div class="panel panel-primary" style="border-color: #00A881">
-                    <div class="panel-heading" style="border-color: #00A881;background-color: #00A881">
+                <div class="panel panel-primary" style="border-color: #54ceff">
+                    <div class="panel-heading" style="border-color: #54ceff;background-color: #54ceff">
                         <h3 class="panel-title">接口参数</h3>
                     </div>
                     <div class="panel-body">
@@ -133,8 +133,8 @@
                 </div>
                 <!--head-->
 
-                <div class="panel panel-primary" style="border-color: #00A881;">
-                    <div class="panel-heading" style="border-color: #00A881;background-color: #00A881">
+                <div class="panel panel-primary" style="border-color: #54ceff;">
+                    <div class="panel-heading" style="border-color: #54ceff;background-color: #54ceff">
                         <h3 class="panel-title">返回结果</h3>
                     </div>
                     <div class="panel-body" id="span_result">
@@ -179,7 +179,8 @@
         </div>
     </div>
 
-    <p>&copy; Powered By xiaoYun.Studio <p>
+    <p style="margin-bottom: 20px;padding-left: 10px;border-left: 4px solid #ddd;">&copy; Powered By xiaoYun.Studio <p>
+
 </div>
 <!-- 模态框（Modal） -->
 <div class="modal fade" id="addParamModal" tabindex="-1" role="dialog"
