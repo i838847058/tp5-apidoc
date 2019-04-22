@@ -25,5 +25,8 @@
         "think-config": {
             "doc": "src/config.php"
         }
+    },
+    "config": {
+        "preferred-install": "dist"
     }
 }
