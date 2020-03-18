@@ -1,9 +1,9 @@
-##xiaoyun/tp-apidoc
+##shuxian/tp5-apidoc
 
 ### 使用方法
 ####1、安装扩展
 ```
-composer require xiaoyun/tp-apidoc
+composer require shuxian/tp-apidoc
 ```
 
 ####2、配置参数
@@ -85,9 +85,6 @@ class Demo extends Controller
 }
 ```
 ####4、在浏览器访问http://你的域名/doc 或者 http://你的域名/index.php/doc 查看接口文档
-
-###更多支持
-- xiaoyun.studio
 
 ###2017年8月16日更新
 - 增加头部参数设置，根据自己需求去设置参数

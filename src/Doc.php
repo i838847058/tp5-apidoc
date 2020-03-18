@@ -4,8 +4,8 @@ namespace Api\Doc;
 class Doc
 {
     protected  $config = [
-        'title'=>'APi接口文档',
-        'version'=>'2.0.0',
+        'title'=>'API接口文档',
+        'version'=>'1.0.0',
         'password' => '',
         'static_path' => '',
         'controller' => [],
