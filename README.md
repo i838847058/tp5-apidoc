@@ -1,10 +1,10 @@
-##shuxian/tp-apidoc 
+##shuxian/tp5-apidoc 
 
 ### 使用方法
 新版TP6适用3.0版本、TP5请用2.0版本
 ####1、安装扩展
 ```
-composer require shuxian/tp-apidoc
+composer require shuxian/tp5-apidoc
 ```
 
 ####2、配置参数
