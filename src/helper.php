@@ -8,7 +8,7 @@ if(defined('THINK_VERSION')){
     \think\Route::any('doc/pass', "\\Api\\Doc\\DocController@pass");
     \think\Route::any('doc/login', "\\Api\\Doc\\DocController@login");
     \think\Route::get('doc', "\\Api\\Doc\\DocController@index");
-}else{
+}else if (defined('THINK_VERSION') and THINK_VERSION  > 6){
     Route::get('doc/assets', "\\Api\\Doc\\DocController@assets",['deny_ext'=>'php|.htacess']);
     Route::get('doc/search', "\\Api\\Doc\\DocController@search");
     Route::get('doc/list', "\\Api\\Doc\\DocController@getList");

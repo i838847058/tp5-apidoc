@@ -1,6 +1,7 @@
-##shuxian/tp5-apidoc
+##shuxian/tp-apidoc 
 
 ### 使用方法
+新版TP6适用2.0版本、TP5请用1.0版本
 ####1、安装扩展
 ```
 composer require shuxian/tp-apidoc

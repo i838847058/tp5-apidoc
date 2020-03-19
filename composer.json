@@ -1,6 +1,14 @@
 {
     "name": "shuxian/tp5-apidoc",
     "description": "The ThinkPHP5 Api Doc Package.",
+    "version": "v1.0.0",
+    "keywords": [
+        "think",
+        "thinkphp6",
+        "apidoc",
+        "api文档",
+        "自动生成"
+    ],
     "type": "think-extend",
     "authors": [
         {
@@ -22,8 +30,10 @@
         "topthink/think-installer": ">=1.0.10"
     },
     "extra": {
-        "think-config": {
-            "doc": "src/config.php"
+        "think": {
+            "config": {
+                "apidoc": "src/config/apidoc.php"
+            }
         }
     },
     "config": {
