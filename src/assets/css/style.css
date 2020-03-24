@@ -8,12 +8,12 @@ body {
 }
 
 a {
-	color: #54ceff;
+	color: #3bcab4;
 	text-decoration: none;
 }
 
 a:HOVER {
-	color: #54ceff;
+	color: #3bcab4;
 	text-decoration: none;
 }
 
@@ -83,11 +83,11 @@ h6 {
 .zt_header {
 	font-family: "Exo", sans-serif;
 	color: #fff;
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background: linear-gradient(-45deg, #23d5ab, #23a6d5, #23d5ab, #23a6d5);
 	background-size: 400% 400%;
 	animation: gradientBG 15s ease infinite;
 	height: 60px;
-	background-color: #54ceff;
+	background-color: #3bcab4;
 	font-size: 30px;
 	line-height: 60px;
 	padding-left: 20px;
@@ -99,7 +99,7 @@ h6 {
 
 .zt_footer {
 	height: 60px;
-	border-top: 2px solid #54ceff;
+	border-top: 2px solid #3bcab4;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -109,11 +109,11 @@ h6 {
 
 .zt_navi {
 	position: absolute;
-	width: 300px;
+	width: 250px;
 	left: 0;
 	bottom: 0px;
 	top: 60px;
-	border-right: 2px solid #54ceff;
+	border-right: 2px solid #3bcab4;
 	overflow: auto;
 }
 
@@ -132,7 +132,7 @@ h6 {
 .zt_content {
 	position: absolute;
 	right: 0;
-	left: 302px;
+	left: 252px;
 	bottom: 0px;
 	top: 60px;
 	overflow-y: auto;
@@ -257,7 +257,7 @@ pre code{
 .am-list>li>a {
 	display: block;
 	padding: 1rem 0;
-	color: #54ceff;
+	color: #3bcab4;
 	text-decoration: none;
 	padding-left: 2em;
 }
