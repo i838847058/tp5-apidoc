@@ -20,9 +20,8 @@ function Process() {
     window.IsCollapsible = true;
     var html = "";
     try {
-        if (json == "") json = "\"\"";
-        var obj = typeof (b) === 'string' ? JSON.parse(json) : json;
-        html = ProcessObject(obj[0], 0, false, false, false);
+        var obj = typeof (json) === 'string' ? JSON.parse(json) : json;
+        html = ProcessObject(obj, 0, false, false, false);
         $id("Canvas").innerHTML = "<PRE class='CodeContainer'>" + html + "</PRE>";
         $("#json_text").html("<PRE class='CodeContainer'>" + html + "</PRE>"); // hongtao
     } catch (e) {
