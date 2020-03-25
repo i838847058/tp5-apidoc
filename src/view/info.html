@@ -20,10 +20,15 @@
         <div class="tab-content">
             <!--info-->
             <div class="tab-pane fade in active" id="info">
-                {if condition="isset($doc.header) &&  !empty($doc.header)"}
+                {if condition="isset($doc.header) && !empty($doc.header)"}
                 <h3>请求Headers</h3>
-                <table class="table table-bordered" >
-                    <tr><th>名称</th><th>是否必须</th><th>默认值</th><th>说明</th></tr>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>名称</th>
+                        <th>是否必须</th>
+                        <th>默认值</th>
+                        <th>说明</th>
+                    </tr>
                     {volist name="doc.header" id="head"}
                     <tr>
                         <td>{$head.name|default="-"}</td>
@@ -37,8 +42,15 @@
                 {/if}
                 {if condition="isset($doc.param)"}
                 <h3>接口参数</h3>
-                <table class="table table-bordered" >
-                    <tr><th>参数名字</th><th>类型</th><th>是否必须</th><th>默认值</th><th>其他</th><th>说明</th></tr>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>参数名字</th>
+                        <th>类型</th>
+                        <th>是否必须</th>
+                        <th>默认值</th>
+                        <th>其他</th>
+                        <th>说明</th>
+                    </tr>
                     {volist name="doc.param" id="param"}
                     <tr>
                         <td>{$param.name|default="-"}</td>
@@ -74,34 +86,48 @@
                     <div class="panel-body">
                         <form id="apiform" class="form-horizontal" role="form">
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">接口地址</label>
-                                <div class="col-sm-6">
-                                    <input class="form-control" type="text" name="url" value='<?php echo isset($doc["url"]) ? $root.$doc["url"] : "请设置url注释"; ?>'>
+                                <label class="col-sm-3 control-label">接口地址</label>
+                                <div class="col-sm-7">
+                                    <input class="form-control" type="text" name="url"
+                                           value='<?php echo isset($doc["url"]) ? $root.$doc["url"] : "请设置url注释"; ?>'>
                                 </div>
-                                <div class="col-sm-4"><button type="button" id="send" class="btn btn-success" data-loading-text="Loading..." autocomplete="off">发送测试</button></div>
+                                <div class="col-sm-2"><label class="control-label text-warning"></label></div>
                             </div>
                             {if condition="isset($doc.header) && !empty($doc.header)"}
                             {volist name="doc.header" id="head"}
                             <div class="form-group">
-                                <label class="col-sm-2 control-label"><span class="badge">header</span> {$head.name|default=""}</label>
-                                <div class="col-sm-6">
+                                <label class="col-sm-3 control-label"><span class="badge">header</span>
+                                    {$head.name|default=""}</label>
+                                <div class="col-sm-7">
                                     <input class="form-control" type="text" name="header[{$head.name}]" value="">
                                 </div>
-                                <div class="col-sm-4"><label class="control-label text-warning"></label></div>
+                                <div class="col-sm-2"><label class="control-label text-warning"></label></div>
                             </div>
                             {/volist}
                             {/if}
                             <div class="form-group">
-                                <label class="col-sm-2 control-label">提交方式</label>
-                                <div class="col-sm-6">
+                                <label class="col-sm-3 control-label">提交方式</label>
+                                <div class="col-sm-7">
                                     <select class="form-control" name="method_type">
-                                        <option value="GET" {if condition="isset($doc['method']) && strtoupper($doc['method']) == 'GET'"}selected{/if}>GET</option>
-                                        <option value="POST" {if condition="isset($doc['method']) && strtoupper($doc['method']) == 'POST'"}selected{/if}>POST</option>
-                                        <option value="PUT" {if condition="isset($doc['method']) && strtoupper($doc['method']) == 'PUT'"}selected{/if}>PUT</option>
-                                        <option value="DELETE" {if condition="isset($doc['method']) && strtoupper($doc['method']) == 'DELETE'"}selected{/if}>DELETE</option>
+                                        <option value="GET" {if
+                                                condition="isset($doc['method']) && strtoupper($doc['method']) == 'GET'"
+                                                }selected{
+                                        /if}>GET</option>
+                                        <option value="POST" {if
+                                                condition="isset($doc['method']) && strtoupper($doc['method']) == 'POST'"
+                                                }selected{
+                                        /if}>POST</option>
+                                        <option value="PUT" {if
+                                                condition="isset($doc['method']) && strtoupper($doc['method']) == 'PUT'"
+                                                }selected{
+                                        /if}>PUT</option>
+                                        <option value="DELETE" {if
+                                                condition="isset($doc['method']) && strtoupper($doc['method']) == 'DELETE'"
+                                                }selected{
+                                        /if}>DELETE</option>
                                     </select>
                                 </div>
-                                <div class="col-sm-4"></div>
+                                <div class="col-sm-2"></div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Cookie</label>
@@ -113,8 +139,10 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">&nbsp;&nbsp;&nbsp;</label>
                                 <div class="col-sm-6">
-                                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addParamModal">
-                                        <span class="glyphicon glyphicon-plus"></span> 增加参数</button>
+                                    <button type="button" class="btn btn-warning" data-toggle="modal"
+                                            data-target="#addParamModal">
+                                        <span class="glyphicon glyphicon-plus"></span> 增加参数
+                                    </button>
                                 </div>
                             </div>
                             {if condition="isset($doc.param)"}
@@ -128,6 +156,14 @@
                             </div>
                             {/volist}
                             {/if}
+                            <div class="form-group">
+                                <div class="col-sm-6 col-sm-offset-3">
+                                    <button type="button" id="send" class="btn btn-success btn-block"
+                                            data-loading-text="Loading..."
+                                            autocomplete="off">发送测试
+                                    </button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -141,7 +177,7 @@
                         <div class="form-inline result_body">
                             <!--                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addJosnTextmModal">自定义解析数据</button>-->
                             <label>缩进量:</label>
-                            <select class="form-control" id="TabSize"  onchange="TabSizeChanged()">
+                            <select class="form-control" id="TabSize" onchange="TabSizeChanged()">
                                 <option value="1">1</option>
                                 <option value="2" selected="true">2</option>
                                 <option value="3">3</option>
@@ -179,7 +215,8 @@
         </div>
     </div>
 
-    <p style="margin-bottom: 20px;padding-left: 10px;border-left: 4px solid #ddd;">&copy; Powered By ShuXian. <p>
+    <p style="margin-bottom: 20px;padding-left: 10px;border-left: 4px solid #ddd;">&copy; Powered By ShuXian.
+    <p>
 
 </div>
 <!-- 模态框（Modal） -->
@@ -228,7 +265,8 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">JSON文本</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control"  name="jsonText" style="width:450px;height: 200px;"></textarea>
+                            <textarea class="form-control" name="jsonText"
+                                      style="width:450px;height: 200px;"></textarea>
                         </div>
                     </div>
                 </form>
@@ -249,20 +287,20 @@
             //关闭
         })
         //发送
-        $("#send").click(function(){
+        $("#send").click(function () {
             var $btn = $(this).button('loading');
             $.ajax({
                 type: "POST",
                 url: "{$doc.url}",
                 data: $("#apiform").serialize(),
-                dataType:'json',
+                dataType: 'json',
                 success: function (data) {
                     window.json = data;
                     Process();
                     $btn.button('reset');
                 },
-                complete : function(XMLHttpRequest,status){
-                    if(status == 'timeout'){
+                complete: function (XMLHttpRequest, status) {
+                    if (status == 'timeout') {
                         alert("网络超时");
                         $btn.button('reset');
                     }
@@ -281,21 +319,21 @@
         window.ImgExpanded = "{$static}/img/Expanded.gif";
     });
 
-    function init(){
-        $("#addParam").click(function(){
+    function init() {
+        $("#addParam").click(function () {
             var name = $('input[name="addparam"]').val();
-            if(name.length > 0){
+            if (name.length > 0) {
                 var group = $("#apiform").find('.form-group').last().clone(true);
                 $(group).find('.col-sm-2').text(name);
-                $(group).find('.form-control').attr('name',name);
-                $(group).find('.form-control').attr('value','');
+                $(group).find('.form-control').attr('name', name);
+                $(group).find('.form-control').attr('value', '');
                 $(group).find('.text-warning').text('');
                 $("#apiform").append(group);
             }
             $('#addParamModal').modal('hide');
         });
 
-        $("#addJson").click(function(){
+        $("#addJson").click(function () {
             window.json = $('textarea[name="jsonText"]').val();
             Process();
             $('#addJosnTextmModal').modal('hide');
