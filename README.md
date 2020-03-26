@@ -1,7 +1,7 @@
 ##shuxian/tp5-apidoc 
+TP5.0.x - 5.1.x专用版本
 
 ### 使用方法
-新版TP6适用3.0版本、TP5请用2.0版本
 ####1、安装扩展
 ```
 composer require shuxian/tp5-apidoc
@@ -94,7 +94,7 @@ class Demo extends Controller
 
 ###问题
 - 不少小伙伴反应，没有正常安装doc.php 配置文件，原因是你改过应用目录官方默认是application
-- 如果没有生成doc.php 配置文件 你可以手动安装，直接在application（你修改的目录）里面创建extra文件夹，然后把扩展包中的vendor\weiwei\api-doc\src\config.php文件复制进去，并重命名为doc.php
+- 如果没有生成doc.php 配置文件 你可以手动安装，直接在application（你修改的目录）里面创建extra文件夹，然后把扩展包中的vendor\shuxian\tp5-apidoc\src\config.php文件复制进去，并重命名为doc.php
 
 ###2018年6月1日更新
 - 增加TP5.1支持
